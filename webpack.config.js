@@ -4,12 +4,12 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
 
 module.exports = {
-  performance: {
-    maxAssetSize: 500000,
-    maxEntrypointSize: 500000,
-  },
-  mode: "production",
-  // mode: "development",
+  // performance: {
+  //   maxAssetSize: 500000,
+  //   maxEntrypointSize: 500000,
+  // },
+  // mode: "production",
+  mode: "development",
   entry: "./src/index.js",
   output: {
     filename: "main.js",
