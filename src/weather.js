@@ -8,6 +8,8 @@ const bdApiKey = process.env.BD_API_KEY;
 
 const unitGroup = "metric";
 
+const summary = document.getElementById("weatherSummary");
+
 export const getWeatherData = async (location) => {
   try { 
     const responseVC = await fetch(
@@ -16,6 +18,7 @@ export const getWeatherData = async (location) => {
     
     const dataVC = await responseVC.json();
     console.log(dataVC);
+    summary.innerHTML = dataVC.currentConditions.temp + " " + dataVC.currentConditions.conditions + " " + dataVC.description;
 
     // Get city name from lat and long
     const responseBD = await fetch(
